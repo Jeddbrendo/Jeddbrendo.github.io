@@ -274,13 +274,12 @@
         @media print {
             @page { size: A4; margin: 15mm; }
             body * { visibility: hidden; }
-            #wttp-container, #wttp-container * { visibility: visible; }
-            #wttp-container { position: absolute; left: 0; top: 0; width: 100%; }
-            #wttp-container { background-color: white; color: black; padding: 0; margin: 0; }
+            #wttp-container .results-section, #wttp-container .results-section * { visibility: visible; }
+            #wttp-container { position: absolute; left: 0; top: 0; width: 100%; background-color: white; color: black; padding: 0; margin: 0; }
             #wttp-container .container { box-shadow: none; max-width: 100%; padding: 0; margin: 0; }
-            #wttp-container .step-one, #wttp-container .step-two > .input-group, #wttp-container .step-two > button, #wttp-container hr, #wttp-container .header-controls, #wttp-container h1, .tabs { display: none !important; }
-            #wttp-container .results-section { border-top: none; padding-top: 0; margin-top: 0; }
-            #wttp-container .results-section h2 { font-size: 1.3em; margin-bottom: 10px; color: black; border-bottom: 2px solid #333; }
+            #wttp-container .step-one, #wttp-container .step-two > .input-group, #wttp-container .step-two > button, #wttp-container .step-two > h2, #wttp-container .step-two > p, #wttp-container hr, #wttp-container .header-controls, #wttp-container h1, #wttp-container > .container > p, .tabs { display: none !important; }
+            #wttp-container .results-section { position: absolute; left: 0; top: 0; border-top: none; padding-top: 0; margin-top: 0; width: 100%; }
+            #wttp-container .results-section h2 { font-size: 1.3em; margin-bottom: 10px; margin-top: 0; color: black; border-bottom: 2px solid #333; }
             #wttp-container .results-section > p:first-of-type { font-size: 0.75em; margin-top: 5px; margin-bottom: 10px; }
             #wttp-container #scheduleTable, #wttp-container .schedule-table { display: block !important; }
             #wttp-container .schedule-table { font-size: 0.85em; }
