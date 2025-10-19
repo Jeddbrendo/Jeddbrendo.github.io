@@ -272,19 +272,25 @@
         @media (prefers-reduced-motion: reduce) { #wttp-container * { transition: none !important; animation: none !important; } }
         
         @media print {
+            @page { size: A4; margin: 15mm; }
             body * { visibility: hidden; }
             #wttp-container, #wttp-container * { visibility: visible; }
             #wttp-container { position: absolute; left: 0; top: 0; width: 100%; }
             #wttp-container { background-color: white; color: black; padding: 0; margin: 0; }
-            #wttp-container .container { box-shadow: none; max-width: 100%; padding: 20px; }
-            #wttp-container .step-one, #wttp-container .step-two > .input-group, #wttp-container .step-two > button, #wttp-container hr, #wttp-container .header-controls .toggle-button, #wttp-container h1 .material-icons-outlined, .tabs { display: none !important; }
-            #wttp-container .results-section, #wttp-container #scheduleTable, #wttp-container .schedule-table { display: block !important; }
-            #wttp-container .schedule-table input { border: none; background: transparent; font-weight: 600; padding: 6px 3px; }
-            #wttp-container table { page-break-inside: auto; }
+            #wttp-container .container { box-shadow: none; max-width: 100%; padding: 0; margin: 0; }
+            #wttp-container .step-one, #wttp-container .step-two > .input-group, #wttp-container .step-two > button, #wttp-container hr, #wttp-container .header-controls, #wttp-container h1, .tabs { display: none !important; }
+            #wttp-container .results-section { border-top: none; padding-top: 0; margin-top: 0; }
+            #wttp-container .results-section h2 { font-size: 1.3em; margin-bottom: 10px; color: black; border-bottom: 2px solid #333; }
+            #wttp-container .results-section > p:first-of-type { font-size: 0.75em; margin-top: 5px; margin-bottom: 10px; }
+            #wttp-container #scheduleTable, #wttp-container .schedule-table { display: block !important; }
+            #wttp-container .schedule-table { font-size: 0.85em; }
+            #wttp-container .schedule-table input { border: none; background: transparent; font-weight: 600; padding: 4px 2px; }
+            #wttp-container table { page-break-inside: auto; margin-top: 10px; }
             #wttp-container tr { page-break-inside: avoid; page-break-after: auto; }
-            #wttp-container th { background-color: #333 !important; color: white !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            #wttp-container th { background-color: #333 !important; color: white !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; padding: 8px; font-size: 0.9em; }
+            #wttp-container td { padding: 6px; }
             #wttp-container .review-row td { background-color: #f0f0f0 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-            #wttp-container .success, #wttp-container .warning { border: 2px solid black; padding: 10px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            #wttp-container .success, #wttp-container .warning { border: 2px solid black; padding: 8px; -webkit-print-color-adjust: exact; print-color-adjust: exact; font-size: 0.85em; margin-top: 10px; }
         }
 
         /* --- 3. Scoped CSS for CLM Time Tracker --- */
@@ -507,8 +513,8 @@
             <div class="step-two">
                 <h2>Step 2: Generate and Adjust Full Meeting Schedule</h2>
                 <div class="input-group common-inputs">
-                    <div class="input-pair"><label for="startTime">Meeting Start Time:</label><input id="startTime" onchange="wttp_updateSchedule()" required="" type="time" value="14:40"/></div>
-                    <div class="input-pair"><label for="finishTime">Meeting Finish Time:</label><input id="finishTime" onchange="wttp_updateSchedule()" type="time" value="15:40"/></div>
+                    <div class="input-pair"><label for="startTime">Meeting Start Time:</label><input id="startTime" onchange="wttp_updateSchedule()" required="" type="time" value="14:00"/></div>
+                    <div class="input-pair"><label for="finishTime">Meeting Finish Time:</label><input id="finishTime" onchange="wttp_updateSchedule()" type="time" value="15:00"/></div>
                 </div>
                 <button onclick="wttp_calculateFullSchedule()">Generate/Update Full Schedule</button>
                 <button class="print-button" onclick="wttp_printSchedule()">Print Schedule</button>
