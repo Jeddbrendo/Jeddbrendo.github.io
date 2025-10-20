@@ -308,6 +308,119 @@
             --bg: #121212; --panel: #1e1e1e; --text: #e6e9ef; --muted: #a7b0c0;
             --accent: #4f8cff; --accent-600: #2f6fe6; --border: #2a2f3a; --ok: #2ec27e;
             --ok-600: #15803d; --bad: #ff5d5d; --bad-600: #b91c1c;
+            --warning: #fax-width: 100%; }
+        }
+        
+        #wttp-container .input-group label { font-weight: 600; white-space: normal; flex-grow: 1; }
+        #wttp-container .input-group input[type="time"],
+        #wttp-container .input-group input[type="number"],
+        #wttp-container .input-group input[type="text"],
+        #wttp-container #readingCalcTable input[type="text"],
+        #wttp-container #readingCalcTable input[type="number"],
+        #wttp-container .schedule-table input[type="text"] {
+            padding: 10px; border: 1px solid var(--color-border-input); border-radius: 6px; font-size: 1em;
+            background-color: var(--color-bg-container); color: var(--color-text-body);
+            transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s; box-sizing: border-box;
+        }
+        
+        #wttp-container .step-one .input-pair input,
+        #wttp-container .step-two .input-pair input { width: auto; max-width: 100%; flex-shrink: 0; }
+        #wttp-container #readingCalcTable input[type="text"],
+        #wttp-container .schedule-table input[type="text"] { width: 7.5ch; }
+        #wttp-container input[type="time"] { width: 12ch; font-variant-numeric: tabular-nums; font-feature-settings: "tnum" 1; }
+        #wttp-container #defaultAnswerTime,
+        #wttp-container #reviewAnswerTime,
+        #wttp-container .schedule-table input[type="number"] { width: 6ch; }
+        #wttp-container .input-group input:focus { border-color: var(--color-primary); box-shadow: 0 0 0 0.2rem var(--color-primary-dark); outline: none; }
+        #wttp-container .mode-toggle-container { margin-bottom: 25px; padding: 10px; border-radius: 8px; background-color: var(--color-border-light); display: inline-block; }
+        #wttp-container.dark-mode .mode-toggle-container { background-color: #333333; }
+        #wttp-container #modeSwitch { margin-right: 10px; }
+        #wttp-container button:not(.toggle-button) {
+            background-color: var(--color-button-bg); color: white; padding: 12px 25px; border: none;
+            border-radius: 6px; cursor: pointer; margin-top: 15px; font-size: 1em;
+            font-weight: bold; transition: background-color 0.3s, transform 0.1s;
+        }
+        #wttp-container button:not(.toggle-button):hover { background-color: var(--color-button-hover); }
+        #wttp-container button:not(.toggle-button):active { transform: scale(0.99); }
+        #wttp-container .print-button { background-color: #007bff; margin-left: 10px; }
+        #wttp-container .print-button:hover { background-color: #0056b3; }
+        #wttp-container hr { border: 0; height: 1px; background-color: var(--color-border-light); margin: 40px 0; }
+        #wttp-container table { width: 100%; border-collapse: collapse; margin-top: 20px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); border-radius: 8px; overflow: hidden; }
+        #wttp-container.dark-mode table { box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); }
+        #wttp-container th, #wttp-container td { border: 1px solid var(--color-border-light); padding: 12px; text-align: left; font-size: 0.95em; }
+        #wttp-container th { background-color: var(--color-table-header-bg); color: white; text-align: center; font-weight: 600; border-color: var(--color-table-header-bg); }
+        #wttp-container tr:nth-child(even) { background-color: var(--color-table-row-even); }
+        #wttp-container .time-calc-table td input { width: 90%; text-align: center; padding: 8px 5px; box-sizing: border-box; }
+        #wttp-container #readingCalcTable td:last-child input { background-color: var(--color-table-result-bg); font-weight: bold; color: var(--color-table-result-text); border: 1px solid var(--color-table-result-text); }
+        #wttp-container .schedule-table th:nth-child(2), #wttp-container .schedule-table th:nth-child(3) { text-align: center; }
+        #wttp-container .schedule-table input { padding: 6px 3px; text-align: center; }
+        #wttp-container .schedule-table td:nth-child(4), #wttp-container .schedule-table td:nth-child(5), #wttp-container .schedule-table td:nth-child(6) { text-align: center; font-weight: 500; }
+        #wttp-container .schedule-table td:nth-child(4) strong { color: var(--color-schedule-start-time); }
+        #wttp-container .review-row td { background-color: var(--color-review-bg-light) !important; font-weight: bold; }
+        #wttp-container .review-row td:last-child { background-color: var(--color-review-bg-dark) !important; }
+        #wttp-container .review-row input[readonly] { background-color: var(--color-border-light) !important; }
+        #wttp-container .results-section { border-top: 2px dashed var(--color-border-light); padding-top: 25px; margin-top: 30px; }
+        #wttp-container #scheduleTable p { font-style: italic; color: var(--color-text-header); }
+        #wttp-container #totalDuration { display: none; }
+        #wttp-container .warning { color: var(--color-warning-text); font-weight: bold; margin-top: 15px; padding: 10px; border: 1px solid var(--color-warning-border); background-color: var(--color-warning-bg); border-radius: 5px; display: inline-block; }
+        #wttp-container .warning strong { color: var(--color-warning-strong); }
+        #wttp-container .success { color: #155724; font-weight: bold; margin-top: 15px; padding: 10px; border: 1px solid #c3e6cb; background-color: #d4edda; border-radius: 5px; display: inline-block; }
+        #wttp-container .success strong { color: #0d4219; }
+        #wttp-container.dark-mode .success { color: #7fdb7f; border-color: #2d5a2d; background-color: #1a3d1a; }
+        #wttp-container.dark-mode .success strong { color: #a3f0a3; }
+        #wttp-container #manualModeInputs, #wttp-container #scheduleTable { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+        #wttp-container #readingCalcTable, #wttp-container .schedule-table { min-width: 520px; }
+
+        @media (max-width: 480px) {
+            #wttp-container .container { padding: 16px; margin: 12px auto; }
+            #wttp-container .step-one .common-inputs, #wttp-container .step-two .common-inputs { gap: 12px; }
+            #wttp-container h1 { font-size: 1.6em; }
+            #wttp-container h2 { font-size: 1.25em; }
+            #wttp-container button:not(.toggle-button) { padding: 10px 16px; }
+        }
+        
+        #wttp-container input[type="number"] { -moz-appearance: textfield; }
+        #wttp-container input[type="number"]::-webkit-outer-spin-button, #wttp-container input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+        
+        @media (prefers-reduced-motion: reduce) { #wttp-container * { transition: none !important; animation: none !important; } }
+        
+        @media print {
+            @page { size: A4; margin: 15mm; }
+            body * { visibility: hidden; }
+            #wttp-container .results-section, #wttp-container .results-section * { visibility: visible; }
+            #wttp-container { position: absolute; left: 0; top: 0; width: 100%; background-color: white; color: black; padding: 0; margin: 0; }
+            #wttp-container .container { box-shadow: none; max-width: 100%; padding: 0; margin: 0; }
+            #wttp-container .step-one, #wttp-container .step-two > .input-group, #wttp-container .step-two > button, #wttp-container .step-two > h2, #wttp-container .step-two > p, #wttp-container hr, #wttp-container .header-controls, #wttp-container h1, #wttp-container > .container > p, .tabs { display: none !important; }
+            #wttp-container .results-section { position: absolute; left: 0; top: 0; border-top: none; padding-top: 0; margin-top: 0; width: 100%; }
+            #wttp-container .results-section h2 { font-size: 1.3em; margin-bottom: 10px; margin-top: 0; color: black; border-bottom: 2px solid #333; }
+            #wttp-container .results-section > p:first-of-type { font-size: 0.75em; margin-top: 5px; margin-bottom: 10px; }
+            #wttp-container #scheduleTable, #wttp-container .schedule-table { display: block !important; }
+            #wttp-container .schedule-table { font-size: 0.85em; }
+            #wttp-container .schedule-table input { border: none; background: transparent; font-weight: 600; padding: 4px 2px; }
+            #wttp-container table { page-break-inside: auto; margin-top: 10px; }
+            #wttp-container tr { page-break-inside: avoid; page-break-after: auto; }
+            #wttp-container th { background-color: #333 !important; color: white !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; padding: 8px; font-size: 0.9em; }
+            #wttp-container td { padding: 6px; }
+            #wttp-container .review-row td { background-color: #f0f0f0 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            #wttp-container .success, #wttp-container .warning { border: 2px solid black; padding: 8px; -webkit-print-color-adjust: exact; print-color-adjust: exact; font-size: 0.85em; margin-top: 10px; }
+        }
+
+        /* --- 3. Scoped CSS for CLM Time Tracker --- */
+        #clm-container {
+            --bg: #f8fafc; --panel: #ffffff; --text: #0f172a; --muted: #4b5563;
+            --accent: #2563eb; --accent-600: #1d4ed8; --border: #e5e7eb; --ok: #16a34a;
+            --ok-600: #15803d; --bad: #dc2626; --bad-600: #b91c1c;
+            --warning: #f59e0b; --warning-600: #d97706;
+            --shadow: 0 1px 2px rgba(0, 0, 0, .06), 0 6px 16px rgba(0, 0, 0, .12);
+            --config-border: #5B3C88; --block-a-border: #3C7E8A; --block-b-border: #D68F01;
+            --block-c-border: #BF2F14; --block-a-bg: #DEEDF0; --block-b-bg: #fef9f1; --block-c-bg: #fbeceb;
+            --heading-color: #1d4ed8; 
+        }
+
+        #clm-container[data-theme="dark"] {
+            --bg: #121212; --panel: #1e1e1e; --text: #e6e9ef; --muted: #a7b0c0;
+            --accent: #4f8cff; --accent-600: #2f6fe6; --border: #2a2f3a; --ok: #2ec27e;
+            --ok-600: #15803d; --bad: #ff5d5d; --bad-600: #b91c1c;
             --warning: #facc15; --warning-600: #eab308;
             --shadow: 0 1px 2px rgba(0, 0, 0, .25), 0 6px 16px rgba(0, 0, 0, .25);
             --config-border: #5B3C88; --block-a-border: #3C7E8A; --block-b-border: #D68F01;
